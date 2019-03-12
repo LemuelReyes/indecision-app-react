@@ -9,11 +9,7 @@ class IndecisionApp extends React.Component {
         };
     }
     handleDeleteOptions() {
-        this.setState(() => {
-            return {
-                options: []
-            };
-        });
+        this.setState(() => ({ options: [] }));
     }
     handlePick() {
             const randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -27,11 +23,7 @@ class IndecisionApp extends React.Component {
             return 'This option already exists';
         }
 
-        this.setState((prevState) => {
-            return {
-                options: prevState.options.concat([option])
-            };
-        });
+        this.setState((prevState) => ({ options: prevState.options.concat([option]) }));
     }
     render() {
         const subtitle = 'Put your life in the hands of a computer';
@@ -121,9 +113,7 @@ class AddOption extends React.Component {
         e.target.elements.option.value = '';
         
 
-        this.setState(() => {
-            return { error };
-        });
+        this.setState(() => ({ error }));
     }
     render() {
         return (
